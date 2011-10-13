@@ -16,3 +16,9 @@ aptitude install -y puppet emacs23-nox git-core
 mv /etc/puppet /etc/puppet.old
 mkdir /etc/puppet
 mount --bind /vagrant/puppet /etc/puppet
+
+# optionally run the deploy.sh file if it exists
+if [ -x /vagrant/deploy.sh ]; then
+    echo "Executing deploy.sh..."
+    /vagrant/deploy.sh
+fi
