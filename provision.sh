@@ -3,6 +3,10 @@
 # Die on any error
 set -e
 
+# Set timezone to UTC
+echo "Etc/UTC" > /etc/timezone
+dpkg-reconfigure --frontend noninteractive tzdata
+
 # Change hostname to 'vagrant'
 oldname=$(hostname)
 hostname vagrant
